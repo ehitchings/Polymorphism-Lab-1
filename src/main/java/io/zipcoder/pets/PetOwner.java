@@ -6,10 +6,10 @@ import java.util.*;
  */
 public class PetOwner {
     private int numberOfPets;
-    private List<String> pets;
+    private List<Pet> pets;
 
     public PetOwner() {
-        this.pets = new ArrayList<String>();
+        this.pets = new ArrayList<Pet>();
     }
 
     public int getNumberOfPets() {
@@ -20,7 +20,26 @@ public class PetOwner {
         this.numberOfPets = numberOfPets;
     }
 
-    public List<String> getPets() {
+    public List<Pet> getPets() {
         return pets;
+    }
+
+    public void petCreator(String type, String name){
+        type = type.toLowerCase();
+        switch(type){
+            case "cat":
+                this.pets.add(new Cat(name));
+                break;
+            case "dog":
+                this.pets.add(new Dog(name));
+                break;
+            case "rat":
+                this.pets.add(new Rat(name));
+                break;
+            default:
+                this.pets.add(new Rat(name));
+                break;
+
+        }
     }
 }

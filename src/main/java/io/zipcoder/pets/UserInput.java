@@ -35,15 +35,16 @@ public class UserInput {
 
     public void petTypes(int pets){
         for(int i = 1; i <= pets; i++){
-            String petInfo = "";
             System.out.println("Pet " + i + ": Type of pet?");
-            petInfo = petInfo + reader.nextLine() + ":\t";
+            String petType = reader.nextLine();
             System.out.println("Name?");
-            petInfo = petInfo + reader.nextLine();
-            currentUser.getPets().add(petInfo);
+            String petName = reader.nextLine();
+            currentUser.petCreator(petType, petName);
         }
 
     }
+
+
 
 
 
